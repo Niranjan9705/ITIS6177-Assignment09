@@ -3,6 +3,10 @@ const app = express();
 const axios = require('axios');
 const port = 3000;
 
+app.get('/', function(req,res){
+        res.send("please visit http://68.183.117.105:3000/say?keyword=Hi for AWS function response");
+});
+
 app.get('/say', function(req,res) {
         resp = "Hello World" + req.query.keyword ;
         axios.get('https://wylbujzyo1.execute-api.us-east-2.amazonaws.com/default/myFunction?keyword='+req.query.keyword)
